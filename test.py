@@ -1,3 +1,2 @@
-a = ["aabb", "aa"]
-a.remove("aa")
-print(a)
+a = [3,4,5]
+print(a[0])
