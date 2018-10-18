@@ -1,3 +1,11 @@
+# problem：
+#  两个链表代表两个数的各个位数，相加，合并成一个链表
+#  例 (2 -> 4 -> 3) + (5 -> 6 -> 4)
+#  结果 7 -> 0 -> 8
+#
+# solution:
+#
+#
 class ListNode:
     def __init__(self, x):
         self.val = x

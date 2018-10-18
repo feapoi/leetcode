@@ -1,3 +1,11 @@
+# problem：
+# 一个列表中，取三个数，相加为0，列出所有的情况
+#  例 [-1, 0, 1, 2, -1, -4]
+#  结果 [[-1, 0, 1],[-1, -1, 2]]
+#
+# solution:
+# 一个值遍历整个表，然后其他两个值赋值为第一个值后面一个值，和最后一个值
+# 其他两个值不断靠近，直到相等，第一个值循环到下一个数
 class Solution:
     def threeSum(self, nums):
         """
@@ -5,7 +13,7 @@ class Solution:
         :rtype: List[List[int]]
         """
         result = []
-        nums.sort()
+        nums.sort()         ##先排序
         numslen = len(nums)
         for i in range(len(nums)):
             if i > 0 and nums[i] == nums[i - 1]:continue
