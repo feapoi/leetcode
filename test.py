@@ -1,2 +1,2 @@
-a = {"a", "b", "c"}
-a.get("a")
+a = []
+print(not a)

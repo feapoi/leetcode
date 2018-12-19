@@ -21,6 +21,8 @@ class Solution:
     # 一个个拆:
     # 使用a1和a2两个指针配合工作，使得两个节点间的指向反向，同时用r记录剩下的链表。
     def reversal_1(self, head):
+        if not head or not head.next:
+            return head
         a1 = head
         a2 = head.next
         head.next = None

@@ -5,16 +5,19 @@ class ListNode:
 
 class Solution:
     def cyclic(self, list):
+        if not list:
+            return False
         a = list
-        b = list
+        b = list.next
         flag = 0
-        while a.next != None and b.next.next != None:
-            a = a.next
-            b = b.next.next
+        while a and b:
             if a == b:
                 flag = 1
-                print("exist cyclic")
-                return a
+                return True
+            if a.next:
+                a = a.next.next
+                b = b.next
+        # 得到循环点
         if flag == 1:
             a = list
             while a != b:

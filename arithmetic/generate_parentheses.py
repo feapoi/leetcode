@@ -21,6 +21,7 @@ def fun1(n):
         if b < a:
             print(2)
             fun2(c + ')', a, b + 1)
+        print("aaa")
     fun2()
     return res
 
