@@ -1,3 +1,5 @@
+# 判断链表是否循环并找到循环点
+
 class ListNode:
     def __init__(self, x):
         self.val = x

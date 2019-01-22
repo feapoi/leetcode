@@ -3,7 +3,7 @@
 #  需要注意的情况：
 #    1.目标数组前后会有相同的数字
 #    2.不能把出现倒序的地方作为起始点，因为倒序的点可能比前面几个数都要小
-#
+#      实在要这么做，要重新遍历一次，如方法3，这样做可以节省了方法2的栈空间
 # solution
 #   1.排序比较，对不上的序列就是需要排序序列
 #   2.栈遍历找出起始点和结束点
@@ -44,6 +44,36 @@ class Solution:
         else:
             return 0
 
+    def findUnsortedSubarray3(self, nums):
+        minNum = float('inf')
+        maxNum = float('-inf')
+        flag = False
+        lenNum = len(nums)
+        for i in range(1, lenNum):
+            if nums[i] < nums[i - 1]:
+                flag = True
+            if flag:
+                minNum = min(minNum, nums[i])
+        flag = False
+        for i in reversed(range(lenNum - 1)):
+            if nums[i] > nums[i + 1]:
+                flag = True
+            if flag:
+                maxNum = max(maxNum, nums[i])
+        l,r = 0,0
+        # 解决重复的问题
+        for i in range(lenNum):
+            if (minNum < nums[i]):
+                l = i
+                break
+        for i in reversed(range(lenNum)):
+            if (maxNum > nums[i]):
+                r = i
+                break
+        if r - l > 0:
+            return r - l + 1
+        else:
+            return 0
 
 
-print(Solution().findUnsortedSubarray2([1,3,2,2,2]))
+print(Solution().findUnsortedSubarray3([2,6,4,8,10,9,15]))
