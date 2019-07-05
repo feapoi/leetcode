@@ -11,17 +11,12 @@ def fun1(n):
     start = ''
     def fun2(c = start, a = 0, b = 0):
         if a + b == 2 * n:
-            print("end")
             res.append(c)
             return
         if a < n:
-            print(1)
             fun2(c + '(', a + 1, b)
-        print("----------------")
         if b < a:
-            print(2)
             fun2(c + ')', a, b + 1)
-        print("aaa")
     fun2()
     return res
 
@@ -39,4 +34,4 @@ def generateParenthesis(N):
                 ans.append('({}){}'.format(left, right))
     return ans
 
-print(fun1(3))
+print(generateParenthesis(3))

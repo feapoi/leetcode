@@ -17,8 +17,8 @@ class Solution:
                 flag = 1
                 return True
             if a.next:
-                a = a.next.next
-                b = b.next
+                a = a.next
+                b = b.next.next
         # 得到循环点
         if flag == 1:
             a = list
@@ -41,4 +41,4 @@ node3.next = node4
 node4.next = node5
 node5.next = node2
 s = Solution()
-print(s.cyclic(node1).val)
+print(s.cyclic(node1))
