@@ -1,2 +1,3 @@
-for j in range(6, 0, -1):
-    print(j)
+a = [1,2,3,4,5,6]
+a.insert(2,666)
+print(a)
